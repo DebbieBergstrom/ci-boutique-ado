@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from .models import Order, OrderLineItem
 
 
@@ -23,6 +22,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     fields = (
         "order_number",
+        "user_profile",
         "date",
         "full_name",
         "email",
