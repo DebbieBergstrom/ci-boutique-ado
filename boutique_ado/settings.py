@@ -14,6 +14,11 @@ from pathlib import Path
 import os
 import dj_database_url
 
+try:
+    from .env import *
+except ImportError:
+    pass
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +34,6 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 ALLOWED_HOSTS = [
     "boutique-ado-ci-debbie.herokuapp.com",
-    "8000-debbiebergs-ciboutiquea-fx319ljskt2.ws-eu108.gitpod.io",
     "localhost",
 ]
 
