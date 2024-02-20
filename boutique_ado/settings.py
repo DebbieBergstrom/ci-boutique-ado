@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "")
 DEBUG = os.environ.get("DEVELOPMENT", "") == "True"
 
 ALLOWED_HOSTS = [
-    "boutique-ado-ci-debbie.herokuapp.com",
+    "https://boutique-ado-ci-debbie-ca9803b6505b.herokuapp.com",
     "localhost",
     "127.0.0.1",
     "8000-debbiebergs-ciboutiquea-fx319ljskt2.ws-eu108.gitpod.io",
@@ -119,7 +119,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = "/accounts/login/"
