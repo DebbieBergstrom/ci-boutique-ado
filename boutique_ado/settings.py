@@ -12,14 +12,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-
-# Assuming env.py is in the same directory as settings.py
-try:
-    from .env import *
-except ImportError:
-    pass
-
 import dj_database_url
+
+if os.path.isfile("env.py"):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
