@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pathlib import Path
+
+# Assuming env.py is in the same directory as settings.py
+try:
+    from .env import *
+except ImportError:
+    pass
+
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,10 +31,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["boutique-ado-ci-debbie.herokuapp.com", "localhost"]
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = "DEVELOPMENT" in os.environ
+
+ALLOWED_HOSTS = [
+    "boutique-ado-ci-debbie.herokuapp.com",
+    "localhost",
+    "8000-debbiebergs-ciboutiquea-fx319ljskt2.ws-eu108.gitpod.io",
+]
 
 
 # Application definition
@@ -178,3 +191,5 @@ STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
 STRIPE_WH_SECRET = os.getenv("STRIPE_WH_SECRET", "")
 DEFAULT_FROM_EMAIL = "boutiqueado@example.com"
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
