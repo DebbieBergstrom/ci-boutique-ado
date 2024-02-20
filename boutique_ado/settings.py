@@ -33,11 +33,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "DEVELOPMENT" in os.environ
+DEBUG = os.environ.get("DEVELOPMENT", "") == "True"
 
 ALLOWED_HOSTS = [
     "boutique-ado-ci-debbie.herokuapp.com",
     "localhost",
+    "127.0.0.1",
     "8000-debbiebergs-ciboutiquea-fx319ljskt2.ws-eu108.gitpod.io",
 ]
 
