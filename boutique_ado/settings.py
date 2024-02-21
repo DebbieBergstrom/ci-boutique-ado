@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEVELOPMENT", "") == "True"
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "boutique-ado-ci-debbie-ca9803b6505b.herokuapp.com",
